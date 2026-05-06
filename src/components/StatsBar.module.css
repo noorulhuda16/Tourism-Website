@@ -1,0 +1,43 @@
+.bar {
+  background: rgba(6, 10, 20, 0.96);
+  border-top: 0.5px solid rgba(201, 169, 110, 0.15);
+  border-bottom: 0.5px solid rgba(201, 169, 110, 0.15);
+  padding: 48px 10vw;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.item {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.number {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1;
+  display: block;
+}
+
+.label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .bar { gap: 40px; }
+}

@@ -1,0 +1,115 @@
+.section {
+  background: #030608;
+  padding: 100px 6vw;
+}
+
+.top {
+  text-align: center;
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.top.topVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  color: var(--snow);
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.card:hover .img {
+  transform: scale(1.07);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3, 6, 8, 0.93) 0%, transparent 55%);
+}
+
+.body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 24px;
+  z-index: 2;
+}
+
+.temp {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--snow);
+  margin-bottom: 8px;
+}
+
+.note {
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.4s;
+}
+
+.card:hover .note {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

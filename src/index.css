@@ -1,0 +1,78 @@
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #c9a96e;
+  --gold-light: #e8c98a;
+  --snow: #f0ede8;
+  --sky: #060a14;
+  --slate: #0d1420;
+  --text-dim: rgba(240, 237, 232, 0.55);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Outfit', sans-serif;
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sky);
+  color: var(--snow);
+  font-family: var(--font-body);
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* hide default cursor on interactive elements too */
+a, button, [role="button"] {
+  cursor: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--sky);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* ── UTILITY ── */
+.section-tag {
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-tag::before,
+.section-tag::after {
+  content: '';
+  width: 28px;
+  height: 0.5px;
+  background: var(--gold);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.section-tag.centered {
+  justify-content: center;
+}

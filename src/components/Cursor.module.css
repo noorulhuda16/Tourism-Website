@@ -1,0 +1,35 @@
+.dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s;
+  mix-blend-mode: difference;
+}
+
+.dotHovered {
+  width: 18px;
+  height: 18px;
+}
+
+.ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 110, 0.5);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  will-change: left, top;
+}
+
+.ringHovered {
+  width: 52px;
+  height: 52px;
+}

@@ -1,0 +1,68 @@
+.statement {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg {
+  position: absolute;
+  inset: -15%;
+  background-size: cover;
+  background-position: center top;
+  will-change: transform;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 10, 20, 0.68);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 0 10vw;
+  max-width: 900px;
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mark {
+  font-family: var(--font-display);
+  font-size: 110px;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.2;
+  line-height: 0.6;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.text {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 46px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--snow);
+  line-height: 1.5;
+}
+
+.attr {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-top: 32px;
+}

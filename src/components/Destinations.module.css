@@ -1,0 +1,121 @@
+.grid {
+  padding: 4px;
+  background: #040810;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 4px;
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tile:hover .img {
+  transform: scale(1.06);
+}
+
+.fg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(4, 8, 16, 0.92) 0%,
+    rgba(4, 8, 16, 0.2) 55%,
+    transparent 100%
+  );
+  transition: opacity 0.4s;
+}
+
+.tile:hover .fg {
+  opacity: 0.75;
+}
+
+.arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border: 0.5px solid rgba(201, 169, 110, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.tile:hover .arrow {
+  opacity: 1;
+  border-color: var(--gold);
+}
+
+.body {
+  position: relative;
+  z-index: 2;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 340px;
+}
+
+/* The first tile (spans 2 rows) gets taller */
+.tile:first-child .body {
+  min-height: 680px;
+}
+
+.tag {
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 300;
+  color: var(--snow);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  max-width: 320px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s;
+}
+
+.tile:hover .desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .tile:first-child {
+    grid-row: auto;
+  }
+  .tile:first-child .body {
+    min-height: 340px;
+  }
+}
